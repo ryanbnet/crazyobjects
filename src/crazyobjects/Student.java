@@ -20,6 +20,5 @@ public class Student
     }
 
     public String toString(){
-        return "Name: " + name + " Number: " + stuNumber + " Locker: " + myLocker.name + " Books: " + myBooks.toString();
     }
 } // end Student class
