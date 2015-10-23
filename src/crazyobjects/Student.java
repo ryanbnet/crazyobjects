@@ -6,9 +6,10 @@ public class Student
 {
     private int stuNumber;
     private String name;
-    private Locker myLocker;
     private Jacket myJacket;
-    public ArrayList<Book> myBooks = new ArrayList();
+
+    public Locker myLocker;
+    public Book[] books;
 
     public Student(String name, int stuNumber){
         this.name = name;
@@ -20,5 +21,11 @@ public class Student
     }
 
     public String toString(){
+        return "Name: " + name + " Number: " + stuNumber + " Locker: " + myLocker.getNumber() + " Books: " + books.toString();
     }
+
+    public String getName() {
+        return name;
+    }
+
 } // end Student class
