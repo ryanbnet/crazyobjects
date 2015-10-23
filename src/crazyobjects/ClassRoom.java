@@ -21,7 +21,7 @@ public class ClassRoom {
             books.add(i.getName());
         }
 
-        if (student.myLocker != null && student.myLocker.checkJacket() != null && !student.books.isEmpty() && books.contains(this.course)){
+        if (student.myLocker != null && student.myLocker.checkJacket() != null && student.books.length > 0 && books.contains(this.course)){
             return true;
         } else {
             return false;
