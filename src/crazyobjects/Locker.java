@@ -1,10 +1,5 @@
 package crazyobjects;
 
-import java.util.ArrayList;
-
-/**
- * Created by ryan on 2015-10-22.
- */
 public class Locker {
     private int number;
     private Student owner;
@@ -13,24 +8,27 @@ public class Locker {
 
     public Locker(Student owner, int number){
         this.owner = owner;
-        this.owner.myLocker = this;
         this.number = number;
+        studentJacket = null;
     }
-
+//Returns the jacket which is in the locker, or null if there is none
     public Jacket checkJacket(){
         return studentJacket;
     }
 
-    public void putJacket (Jacket myJacket){
-        studentJacket = myJacket;
+//Student puts their jacket into the locker, losing it in the process
+    public void putJacket (){
+        studentJacket = owner.myJacket;
+        owner.myJacket = null;
     }
+    //Owner takes the jacket out of the locker
+    public void takeJacket(){
+        owner.myJacket = studentJacket;
+        studentJacket = null;
+    }
+
 
     public String toString(){
         return "Number: " + number + " Owner: " + owner.getName() + " Books: " + books.toString();
-    }
-
-
-    public int getNumber() {
-        return number;
     }
 }

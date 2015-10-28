@@ -1,15 +1,15 @@
 package crazyobjects;
 
-/**
- * Created by ryan on 2015-10-22.
- */
 public class Book {
-  public String title;
+    public String title;
 public String course;
 
-public Book (String title, String course){
+    public Book(){}
+
+public Book (String title){
     this.title=title;
-    this.course=course;
+    this.course=title;
+    //Since the course of the book will be the same as its title, there is only 1 variable needed
 }
 
     public void setTitle(String title) {
@@ -19,8 +19,12 @@ public Book (String title, String course){
     public void setCourse(String course) {
         this.course = course;
     }
-        public String toString() { 
+        public String toString() {
         String bookStats = "The book's title is " + title + " and it is for " + course;
         return(bookStats);
+    }
+
+    public String getCourse() {
+        return course;
     }
 }

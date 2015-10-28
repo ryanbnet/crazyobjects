@@ -9,11 +9,25 @@ public class VirtualSchool {
      */
     public static void main(String[] args) {   // Create a student and display
         Student me = new Student("Shanpei", 1234);
-        System.out.println("Student: " + me + "\n");
+        System.out.print("Student: ");
+        System.out.println(me);
+
 
         // Create Student's classes
         ClassRoom ics4u = new ClassRoom("ICS4U", "Ms. Hideg");
-        ClassRoom sph4u = new ClassRoom("SBI4U", "Mr. Strict");
+        ClassRoom sph4u = new ClassRoom("SPH4U", "Mr. Strict");
+
+        //Create Books for classes
+
+        Book ics4uBook = new Book ("ICS4U");
+        Book sph4uBook = new Book ("SPH4U");
+
+        //Put books in Student's locker
+
+        me.myLocker.books = new Book[2];
+
+        me.myLocker.books[0] = ics4uBook;
+        me.myLocker.books[1] = sph4uBook;
 
         // Retrieve books from locker needed for classes
 
@@ -22,7 +36,7 @@ public class VirtualSchool {
             if (me.myLocker.books[i].course.equalsIgnoreCase("ICS4U")) {
                 me.books[i] = me.myLocker.books[i];
                 me.myLocker.books[i] = null;
-            } else if (me.myLocker.books[i].course.equalsIgnoreCase("SBI4U")) {
+            } else if (me.myLocker.books[i].course.equalsIgnoreCase("SPH4U")) {
                 me.books[i] = me.myLocker.books[i];
                 me.myLocker.books[i] = null;
             } else {
@@ -38,6 +52,9 @@ public class VirtualSchool {
 
             }
         }
+
+        //Put away Jacket
+        me.myLocker.putJacket();
 
 
         // Attempt to enter the classroom of Mr. Strict
